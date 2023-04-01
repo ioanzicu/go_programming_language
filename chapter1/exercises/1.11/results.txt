@@ -1,0 +1,9 @@
+Get "https://s.w.org": dial tcp 192.0.77.48:443: i/o timeout
+Get "https://googletagmanager.com": dial tcp 142.251.1.97:443: i/o timeout
+Get "https://fonts.googleapis.com": dial tcp 64.233.164.95:443: i/o timeout
+Get "http://gopl.io": dial tcp 52.88.110.197:80: i/o timeout
+Get "https://golang.org": dial tcp 216.58.209.209:443: i/o timeout
+Get "https://facebook.com": dial tcp 31.13.72.36:443: i/o timeout
+Get "https://godoc.org": dial tcp 34.160.232.96:443: i/o timeout
+Get "https://fonts.gstatic.com": dial tcp 216.58.210.163:443: i/o timeout
+30.03s elapsed
