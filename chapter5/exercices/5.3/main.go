@@ -31,7 +31,6 @@ func nodeData(stack []string, n *html.Node) {
 	}
 
 	if n.Type == html.TextNode {
-		// fmt.Println(n.Data)
 		fmt.Printf("%+#v\n", n.Data)
 	}
 
