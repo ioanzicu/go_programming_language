@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="format-detection" content="telephone=no">
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Golang - изучаем язык программирования GO</title>
+	<meta name="description" content="Язык программирования GO. Статьи и уроки по изучения основ языка программирования Go. Примеры кода языка программирования Golang." />
+	<link rel="canonical" href="https://golangify.com/" />
+	<meta property="og:locale" content="ru_RU" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Golang" />
+	<meta property="og:description" content="Язык программирования GO. Статьи и уроки по изучения основ языка программирования Go. Примеры кода языка программирования Golang." />
+	<meta property="og:url" content="https://golangify.com/" />
+	<meta property="og:site_name" content="Golang" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://golangify.com/","url":"https://golangify.com/","name":"Golang - изучаем язык программирования GO","isPartOf":{"@id":"https://golangify.com/#website"},"description":"Язык программирования GO. Статьи и уроки по изучения основ языка программирования Go. Примеры кода языка программирования Golang.","breadcrumb":{"@id":"https://golangify.com/#breadcrumb"},"inLanguage":"ru-RU"},{"@type":"BreadcrumbList","@id":"https://golangify.com/#breadcrumb","itemListElement":[]},{"@type":"WebSite","@id":"https://golangify.com/#website","url":"https://golangify.com/","name":"Golang","description":"Изучение языка программирования Golang.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://golangify.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"ru-RU"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Golang &raquo; Лента" href="https://golangify.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Golang &raquo; Лента комментариев" href="https://golangify.com/comments/feed" />
+<link rel='stylesheet' id='urvanov_syntax_highlighter-css' href='https://golangify.com/wp-content/plugins/urvanov-syntax-highlighter/css/min/urvanov_syntax_highlighter.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-turnwall-css' href='https://golangify.com/wp-content/plugins/urvanov-syntax-highlighter/themes/turnwall/turnwall.css' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css' href='https://golangify.com/wp-content/plugins/urvanov-syntax-highlighter/fonts/monaco.css' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-style-css' href='https://golangify.com/wp-content/themes/knowhow-childtheme/style.css' type='text/css' media='all' />
+<style id='theme-style-inline-css' type='text/css'>
+ 
+				/* Links */
+				a, 
+				a:visited { color:#00bedb; }
+				a:hover, 
+				.widget a:hover,
+				#primary-nav ul a:hover,
+				#footer-nav a:hover,
+				#breadcrumbs a:hover { color:#009dbc; }
+				
+				/* Theme Color */
+				#commentform #submit, 
+				.st_faq h2.active .action, 
+				.widget_categories ul span, 
+				.pagination .current, 
+				.tags a, 
+				.page-links span,
+				#comments .comment-meta .author-badge,
+				input[type="reset"],
+				input[type="submit"],
+				input[type="button"] { background: #74cedb; }
+				#live-search #searchsubmit, input[type="submit"] { background-color: #74cedb; }
+				.tags a:before { border-color: transparent #74cedb transparent transparent; }
+
+				
+				
+				
+</style>
+<link rel='stylesheet' id='theme-font-css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700&#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='https://golangify.com/wp-content/themes/knowhow/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='shortcodes-css' href='https://golangify.com/wp-content/themes/knowhow/framework/shortcodes/shortcodes.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://golangify.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://golangify.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='urvanov_syntax_highlighter_js-js-extra'>
+/* <![CDATA[ */
+var UrvanovSyntaxHighlighterSyntaxSettings = {"version":"2.8.28","is_admin":"0","ajaxurl":"https:\/\/golangify.com\/wp-admin\/admin-ajax.php","prefix":"urvanov-syntax-highlighter-","setting":"urvanov-syntax-highlighter-setting","selected":"urvanov-syntax-highlighter-setting-selected","changed":"urvanov-syntax-highlighter-setting-changed","special":"urvanov-syntax-highlighter-setting-special","orig_value":"data-orig-value","debug":""};
+var UrvanovSyntaxHighlighterSyntaxStrings = {"copy":"Copied to the clipboard","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://golangify.com/wp-content/plugins/urvanov-syntax-highlighter/js/min/urvanov_syntax_highlighter.min.js' id='urvanov_syntax_highlighter_js-js'></script>
+<style>.pseudo-clearfy-link { color: #008acf; cursor: pointer;}.pseudo-clearfy-link:hover { text-decoration: none;}</style><script data-ad-client="ca-pub-6166316474194592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script><!--[if lt IE 9]><script src="https://golangify.com/wp-content/themes/knowhow/js/html5.js"></script><![endif]--><!--[if (gte IE 6)&(lte IE 8)]><script src="https://golangify.com/wp-content/themes/knowhow/js/selectivizr-min.js"></script><![endif]--><link rel="shortcut icon" href="https://golangify.com/wp-content/uploads/2021/05/logo.png"/>
+<link rel="icon" href="https://golangify.com/wp-content/uploads/2022/08/cropped-icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://golangify.com/wp-content/uploads/2022/08/cropped-icon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://golangify.com/wp-content/uploads/2022/08/cropped-icon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://golangify.com/wp-content/uploads/2022/08/cropped-icon-270x270.png" />
+</head>
+<body class="home blog">
+
+  <!-- #site-container -->
+  <div id="site-container" class="clearfix">
+
+          <!-- #primary-nav-mobile -->
+      <nav id="primary-nav-mobile">
+        <a class="menu-toggle clearfix" href="#"><i class="fa fa-reorder"></i></a>
+        <ul id="mobile-menu" class="clearfix"><li id="menu-item-1904" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1904"><a href="https://golangify.com/go/install-go">Установка Golang</a>
+<ul class="sub-menu">
+	<li id="menu-item-1905" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1905"><a href="https://golangify.com/setup-on-windows">Установка Go на Windows</a></li>
+	<li id="menu-item-1908" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1908"><a href="https://golangify.com/install-on-ubuntu">Установка Go на Ubuntu</a></li>
+	<li id="menu-item-1907" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1907"><a href="https://golangify.com/install-on-debian-10">Установка Go на Debian</a></li>
+	<li id="menu-item-1988" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1988"><a href="https://golangify.com/install-go-on-macos">Установка Go на MacOS</a></li>
+	<li id="menu-item-1906" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1906"><a href="https://golangify.com/install-on-centos-7">Установка Go на CentOS</a></li>
+</ul>
+</li>
+<li id="menu-item-1642" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1642"><a href="https://golangify.com/go/kurs-izucheniya-golang-dlya-nachinayuschih">Курс Go</a></li>
+<li id="menu-item-2145" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2145"><a href="https://golangify.com/go/web-app-go">Создание сайта</a></li>
+<li id="menu-item-1643" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1643"><a href="https://golangify.com/go/string-examples">Строки</a></li>
+<li id="menu-item-1644" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1644"><a href="https://golangify.com/go/time">Время</a></li>
+<li id="menu-item-1645" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1645"><a href="https://golangify.com/go/numbers">Числа</a></li>
+</ul>      </nav>
+      <!-- /#primary-nav-mobile -->
+    
+    <!-- #header -->
+    <header id="site-header" class="clearfix" role="banner">
+      <div class="ht-container">
+
+        <!-- #logo -->
+        <div id="logo">
+          <h1>          <a title="Golang" href="https://golangify.com">
+                          Golang                      </a>
+          </h1>        </div>
+        <!-- /#logo -->
+
+                  <!-- #primary-nav -->
+          <nav id="primary-nav" role="navigation" class="clearfix">
+            <ul id="menu-primary-nav" class="nav sf-menu clearfix"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1904"><a href="https://golangify.com/go/install-go">Установка Golang</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1905"><a href="https://golangify.com/setup-on-windows">Установка Go на Windows</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1908"><a href="https://golangify.com/install-on-ubuntu">Установка Go на Ubuntu</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1907"><a href="https://golangify.com/install-on-debian-10">Установка Go на Debian</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1988"><a href="https://golangify.com/install-go-on-macos">Установка Go на MacOS</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1906"><a href="https://golangify.com/install-on-centos-7">Установка Go на CentOS</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1642"><a href="https://golangify.com/go/kurs-izucheniya-golang-dlya-nachinayuschih">Курс Go</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2145"><a href="https://golangify.com/go/web-app-go">Создание сайта</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1643"><a href="https://golangify.com/go/string-examples">Строки</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1644"><a href="https://golangify.com/go/time">Время</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1645"><a href="https://golangify.com/go/numbers">Числа</a></li>
+</ul>          </nav>
+          <!-- #primary-nav -->
+        
+      </div>
+    </header>
+    <!-- /#header -->
+
+    <!-- #live-search -->
+    <div id="live-search">
+      <div class="ht-container">
+        <div id="search-wrap">
+          <form role="search" method="get" id="searchform" class="clearfix" action="https://golangify.com/">
+            <input type="text" onfocus="if (this.value == 'Введите поисковый запрос...') {this.value = '';}" onblur="if (this.value == '')  {this.value = 'Введите поисковый запрос...';}" value="Введите поисковый запрос..." name="s" id="s" autocapitalize="off" autocorrect="off" autocomplete="off" />
+            <i class="live-search-loading fa fa-spinner fa-spin"></i>
+            <button type="submit" id="searchsubmit">
+              <i class='fa fa-search'></i><span>Поиск</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+<!-- /#live-search -->
+
+<!-- #primary -->
+<div id="primary" class="sidebar-off clearfix">
+  <!-- .ht-container -->
+  <div class="ht-container">
+
+    <!-- #content -->
+    <section id="content" role="main">
+
+      <header id="page-header">
+        <h2 class="page-title">
+          Уроки для изучения Golang        </h2>
+      </header>
+      <div id="homepage-categories" class="clearfix">
+        <div class="row"><div class="column col-half 1"><h3> <a href="https://golangify.com/go/io" title="Все статьи «Ввод и вывод данных»" >Ввод и вывод данных</a><span class="cat-count">(13)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/input-keyboard">
+              Читаем ввод с клавиатуры в командной строке            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/write-to-stdout-stderr">
+              Вывод данных и ошибок в командную строку            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/open-file">
+              Открываем файл используя полный путь к нему            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/reading-file-into-string">
+              Читаем содержимое файла и сохраняем данные в переменную            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/open-write-utf-8-file-charset">
+              Чтение и запись файлов в разной кодировке в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/file-seek">
+              Поиск позиции в файле через Seek()            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/binary-data-encoding-binary">
+              Чтение и запись бинарных данных в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/io-multiwriter">
+              Запись данных в нескольких файлах одновременно через MultiWriter            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/io-pipe">
+              Туннель между процессами записи и чтения через io.Pipe()            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/gob">
+              Сериализация данных в бинарный формат gob            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/create-zip-files">
+              Создание ZIP архивов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/parsing-xml">
+              Парсинг большого XML файла в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/bad-json-array">
+              Извлечение данных из поврежденного JSON массива в Golang            </a></li>
+
+            </ul></div><div class="column col-half 2"><h3> <a href="https://golangify.com/go/kurs-izucheniya-golang-dlya-nachinayuschih" title="Все статьи «Курс по изучению Golang для начинающих»" >Курс по изучению Golang для начинающих</a><span class="cat-count">(36)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/go-beginning">
+              Начало программирования в Go &#8212; что нужно знать?            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/golang-intro">
+              Что такое Go? Go Playground, пакеты, функции и скобки в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/osnovy-golang">
+              Основы: Работа с числами, форматирование строк, переменные и константы            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/go-for-if-else-switch">
+              Цикл for, if-else-switch, True-False и операторы сравнения в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/switch-case">
+              Оператор switch в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/variable-scope">
+              Область видимости переменных в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/code-ticket">
+              Создание программы для покупки билетов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/float">
+              Вещественные числа в Golang &#8212; float64 и float32            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/integer">
+              Целые числа integer в Golang &#8212; выбор верного типа            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/big-numbers">
+              Пакет Big &#8212; Крупные числа в Golang и примеры их использования            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/string">
+              Работа со строками в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/convert-types">
+              Конвертирование типов данных в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/shifr-vizhenera">
+              Создаем Шифр Виженера на Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/func">
+              Функции в Golang на примерах            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/methods">
+              Методы в Go &#8212; Создание и использование методов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/closures-anonymous-first-class-func">
+              Функции первого класса, замыкания и анонимные функции в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/celsius-to-fahrenheit">
+              Программа для перевода температуры из Цельсия в Фаренгейты            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/array">
+              Создание и итерация массива в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/slice-array">
+              Срез массива в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/array-append-make">
+              Работа с массивами и срезами в Golang &#8212; append() и make()            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/map">
+              Карта &#8212; ассоциативный массив в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/game-life">
+              Создание игры «Жизнь» в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/struct">
+              Структуры в Golang &#8212; Экспорт структур в JSON            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/oop">
+              Структуры и методы &#8212; объектно-ориентированный подход в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/composition-and-forwarding">
+              Композиция и встраивание методов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/interface">
+              Интерфейсы в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/silmulator-ferma">
+              Создание игры-симулятора фермы в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/pointers">
+              Указатели в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/nil">
+              Значение nil в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/errors">
+              Обработка ошибок в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/sudoku">
+              Создание игры Судоку в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/goroutines">
+              Горутины и конкурентность &#8212; Многопоточность в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/concurency">
+              Изучаем конкурентность и параллелизм в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/life-mars">
+              Конкурентность в Go на примере создания игры для изучения Марса            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/json">
+              JSON в Golang &#8212; сериализация и десериализация            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/moviego-video-editing">
+              Редактирование видео в Golang            </a></li>
+
+            </ul></div></div><div class="row"><div class="column col-half 3"><h3> <a href="https://golangify.com/go/%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8" title="Все статьи «Новости»" >Новости</a><span class="cat-count">(1)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/new-go1-20">
+              Вышла новая версия Golang 1.20            </a></li>
+
+            </ul></div><div class="column col-half 4"><h3> <a href="https://golangify.com/go/string-examples" title="Все статьи «Примеры работы со строками»" >Примеры работы со строками</a><span class="cat-count">(12)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/poisk-slov">
+              Поиск слов в строке в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/string-to-array">
+              Разбить строку в массив используя разделитель в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/join-string">
+              Объединяем элементы массива в строку используя разделитель            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/concatenation">
+              Конкатенация строк в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/align-text">
+              Выравнивание текста с табуляцией tabwriter в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/string-replace">
+              Replace() &#8212; Замена текста из строки в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/poisk-regex">
+              Поиск текста в строке, используя регулярные выражения            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/registr-zamena">
+              Меняем регистр букв в строке в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/parsing-csv">
+              Парсинг CSV файлов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/trim-space">
+              Удаляем пробелы (или другие символы) из начала и конца строки            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/add-probel">
+              Добавление отступов в тексте на Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/kodirovka-zamena">
+              Меняем кодировку строки в Golang            </a></li>
+
+            </ul></div></div><div class="row"><div class="column col-half 5"><h3> <a href="https://golangify.com/go/time" title="Все статьи «Работа с датой и временем в Go»" >Работа с датой и временем в Go</a><span class="cat-count">(13)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/date-time-layout-2006-01-02">
+              Шаблон форматирования даты и времени в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/today-date">
+              Узнать текущую дату в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/parsing-string-date">
+              Конвертируем значение строки в дату            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/unix-timestamp">
+              Конвертирование даты и времени в UNIX формат и наоборот            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/time-units-extract">
+              Получаем год, месяц, день и время из даты в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/add-date-time">
+              Математические операции над временем в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/difference-dates-sub-since-until">
+              Узнать разницу между двумя датами в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/convert-timezone">
+              Конвертирование времени из разных часовых поясов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/period-run-code">
+              Запуск частей кода через промежутки времени в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/run-code-with-delay">
+              Запуск кода с задержкой в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/code-timeout">
+              Ставим лимит на время выполнения программы (Timeout)            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/serializing-date-json">
+              Сериализация времени и даты            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/strftime">
+              Использование strftime стиля для форматирование даты и времени            </a></li>
+
+            </ul></div><div class="column col-half 6"><h3> <a href="https://golangify.com/go/go-network" title="Все статьи «Работа с сетью и HTTP-запросами»" >Работа с сетью и HTTP-запросами</a><span class="cat-count">(1)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/local-ip-address">
+              Находим локальные IP адреса из сетевых интерфейсов на Go            </a></li>
+
+            </ul></div></div><div class="row"><div class="column col-half 7"><h3> <a href="https://golangify.com/go/filesystem" title="Все статьи «Работа с файловой системой»" >Работа с файловой системой</a><span class="cat-count">(10)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/file-info">
+              Как получить информацию о файле в Golang?            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/temp-files-ioutil">
+              Создание временных файлов и временных папок в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/file-writestring">
+              Создаем файл в Golang и записываем в него контент            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/writing-file-multiple-goroutines">
+              Запись данных в файл из нескольких горутин            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/listing-directory">
+              Получаем список файлов и папок из каталога            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/change-file-permission">
+              Изменяем права доступа файла в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/openfile-mkdir">
+              Создание файлов и папок в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/glob-filter">
+              Glob() &#8212; Фильтрация списка файлов по поисковому шаблону            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/compare-files">
+              Сравнение двух файлов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/user-home-directory">
+              Получаем путь к домашней папке текущего пользователя            </a></li>
+
+            </ul></div><div class="column col-half 8"><h3> <a href="https://golangify.com/go/numbers" title="Все статьи «Работа с числами в Golang»" >Работа с числами в Golang</a><span class="cat-count">(12)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/string-in-number">
+              Конвертация строк в числовые типы в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/float-arithmetics">
+              Манипуляция числами типа Float (простая математика)            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/float-comparison">
+              Сравнение вещественных чисел float в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/rounding-float">
+              Округление вещественных чисел float в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/format-number">
+              Форматирование чисел в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/binary-to-decimal-octal-and-hexadecimal">
+              Конвертация двоичных, восьмеричных, десятичных и шестнадцатеричных значений в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/checksum-md5">
+              Генерация MD5 контрольной суммы в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/plural">
+              Форматирование множественного числа в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/gen-random-number">
+              Генерация случайных чисел в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/logarithm">
+              Логарифмы в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/gradus-to-radian-convert">
+              Конвертирование градусов в радианы Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/complex-numbers">
+              Операции над комплексными числами в Go            </a></li>
+
+            </ul></div></div><div class="row"><div class="column col-half 9"><h3> <a href="https://golangify.com/go/tips-and-ricks" title="Все статьи «Советы и рекомендации»" >Советы и рекомендации</a><span class="cat-count">(2)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/kotlin-vs-golang">
+              Kotlin или Golang: Что лучше для разработки приложений?            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/memory-saving-slice-struct-map">
+              Простые трюки для экономии памяти в Golang            </a></li>
+
+            </ul></div><div class="column col-half 10"><h3> <a href="https://golangify.com/go/web-app-go" title="Все статьи «Создание веб-приложения на Go»" >Создание веб-приложения на Go</a><span class="cat-count">(25)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/structure-web-app">
+              Изначальная структура веб-приложения на Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/web-application-basics">
+              Основы веб-приложений на Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/routing-servemux">
+              Маршрутизация HTTP-запросов используя ServeMux            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/customizing-http-headers">
+              Настройка HTTP заголовков веб-приложения            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/url-query-strings">
+              Обработка URL-запросов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/web-project-structure">
+              Организация файлов веб-приложения на Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/template-engine">
+              Шаблонизатор в Golang при создании веб-приложения            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/serving-static-files">
+              Получаем доступ к статическим файлам &#8212; CSS и JS            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/http-handler-interface">
+              Интерфейс http.Handler &#8212; Обработчик запросов            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/managing-configuration-settings">
+              Настройка веб-приложения из командной строки            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/logging">
+              Логирование в Golang &#8212; Записываем лог в файл            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/dependency-injection">
+              Внедрение зависимостей в Golang (Dependency Injection)            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/helpers-error-handling">
+              Создание методов-помощников для обработки ошибок            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/isolating-the-application-routes">
+              Изоляция маршрутизации приложения в отдельный файл            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/mysql-web-site">
+              Установка MySQL для веб-приложения на Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/go-sql-driver-mysql">
+              Установка MySQL драйвера для работы в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/mysql-connection-pool-go">
+              Создание пула подключений к MySQL в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/designing-a-database-model">
+              Проектирование модели в Go            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/executing-sql-statements">
+              Выполнение SQL запросов в Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/single-record-sql-queries">
+              Выводим запись из базы данных по её ID из URL            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/multiple-record-sql-queries">
+              Вывод последних записей из базы данных            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/transactions-and-other-details">
+              SQL Транзакции через Golang            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/dynamic-html-templates">
+              Отображение контента из MySQL в HTML-шаблон            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/template-actions-and-functions">
+              Операторы и функции от Golang Шаблонизатора            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/caching-templates">
+              Кэширование шаблонов в Golang            </a></li>
+
+            </ul></div></div><div class="row"><div class="column col-half 11"><h3> <a href="https://golangify.com/go/install-go" title="Все статьи «Установка Golang»" >Установка Golang</a><span class="cat-count">(5)</span></h3><ul class="category-posts">                          <li class="format-standard"><a href="https://golangify.com/install-on-ubuntu">
+              Как установить Go на Ubuntu 22.04, 20.04            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/install-on-debian-10">
+              Как установить Go на Debian 10            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/install-on-centos-7">
+              Как установить Golang на CentOS 7            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/setup-on-windows">
+              Как установить и настроить Go на Windows            </a></li>
+
+                                      <li class="format-standard"><a href="https://golangify.com/install-go-on-macos">
+              Установка Go 1.15 на MacOS            </a></li>
+
+            </ul></div>  </div>
+</div>
+
+</section>
+<!-- #content -->
+
+
+</div>
+<!-- /.ht-container -->
+</div>
+<!-- #primary -->
+
+<!-- #footer-widgets -->
+  <div id="footer-widgets" class="clearfix">
+    <!-- .ht-container -->
+    <div class="ht-container">
+
+<!-- #site-footer -->
+<footer id="site-footer" class="clearfix" role="contentinfo">
+  <div class="ht-container">
+
+    
+
+  <small id="copyright">
+          Изучение языка программирования Golang      </small>
+  
+</div>
+<!-- /.ht-container -->
+</footer> 
+<!-- /#site-footer -->
+
+<!-- /#site-container -->
+</div>
+
+
+
+<script>var pseudo_links = document.querySelectorAll(".pseudo-clearfy-link");for (var i=0;i<pseudo_links.length;i++ ) { pseudo_links[i].addEventListener("click", function(e){   window.open( e.target.getAttribute("data-uri") ); }); }</script><!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(77533252, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/77533252" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
+<!-- Dynamic page generated in 0.311 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2023-03-13 13:28:01 -->
+
+<!-- Compression = gzip -->
