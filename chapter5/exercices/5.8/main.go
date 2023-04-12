@@ -32,7 +32,7 @@ func main() {
 
 	elemntId := os.Args[1]
 
-	n := ElementretuByID(doc, elemntId)
+	n := ElementByID(doc, elemntId)
 	if n == nil {
 		fmt.Fprintf(os.Stderr, "HTML element with id '%s' was not found\n", elemntId)
 	} else {
@@ -43,7 +43,7 @@ func main() {
 	}
 }
 
-func ElementretuByID(n *html.Node, id string) *html.Node {
+func ElementByID(n *html.Node, id string) *html.Node {
 	if n == nil {
 		return nil
 	}

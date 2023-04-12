@@ -27,7 +27,7 @@ func TestElementretuByID(t *testing.T) {
 	}
 
 	elementId := "menu-item-1645"
-	n := ElementretuByID(doc, elementId)
+	n := ElementByID(doc, elementId)
 	if n == nil {
 		t.Errorf("Expected non nil %+#v", n)
 	}
