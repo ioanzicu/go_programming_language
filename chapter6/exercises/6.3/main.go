@@ -1,3 +1,7 @@
+// (*IntSet).UnionWith computes the union of two sets using |, the word-paral-
+// lel bitwise OR operator. Implement methods for IntersectWith, DifferenceWith, and Sym-
+// metricDifference for the corresponding set operations. (The symmetric difference of two
+// sets contains the elements present in one set or the other but not both.)
 package main
 
 import (
